@@ -1,0 +1,7 @@
+services:
+  - type: cron
+    name: sentinelle-daily
+    schedule: '59 23 * * *'
+    env: python
+    buildCommand: 'pip install -r requirements.txt'
+    startCommand: 'python sentinelle_runner_daily.py'

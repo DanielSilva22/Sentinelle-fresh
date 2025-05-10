@@ -1,0 +1,1 @@
+# Utilitaire mémoire JSON (placeholder)

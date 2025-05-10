@@ -1,0 +1,1 @@
+# Lecture et gestion des logs (placeholder)
