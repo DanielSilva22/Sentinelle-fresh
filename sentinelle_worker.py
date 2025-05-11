@@ -9,7 +9,7 @@ from fpdf import FPDF
 import unicodedata
 
 # === CONFIGURATION ===
-BASE_PATH = "/data/Hub_Personnel"
+BASE_PATH = os.path.join(os.getcwd(), "Hub_Personnel")
 COMMAND_PATH = os.path.join(BASE_PATH, "GlitchOps/Sentinelle/sentinelle.json")
 LOG_PATH = os.path.join(BASE_PATH, "GlitchOps/Sentinelle/logs")
 openai.api_key = os.environ.get("OPENAI_API_KEY")
