@@ -1,5 +1,5 @@
 
-# sentinelle_worker.py – Agent GPT exécuteur de sentinelle.json
+# sentinelle_worker.py – Surveillance et exécution GPT
 import os
 import json
 import time
@@ -59,7 +59,7 @@ def generate_pdf(cible, prompt, titre):
 
 # === BOUCLE PRINCIPALE ===
 def sentinelle_loop():
-    log_event("Agent actif. Surveillance du JSON en cours...")
+    log_event("🔁 Agent actif. Surveillance du JSON en cours...")
     while True:
         if os.path.exists(COMMAND_PATH):
             try:
@@ -86,10 +86,16 @@ def sentinelle_loop():
                     with open(COMMAND_PATH, "w") as f:
                         json.dump(commande, f, indent=2)
 
-                    log_event(f"Commande '{type_cmd}' exécutée.")
+                    log_event(f"✅ Commande '{type_cmd}' exécutée. Résultat : {str(result)[:60]}...")
 
             except Exception as e:
-                log_event(f"Erreur de traitement : {str(e)}")
+                log_event(f"❌ Erreur de traitement : {str(e)}")
+
+        time.sleep(30)
+
+if __name__ == "__main__":
+    sentinelle_loop()
+
 
         time.sleep(30)
 
